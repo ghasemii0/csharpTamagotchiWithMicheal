@@ -1,0 +1,27 @@
+#funGif {
+  /* display: none; */
+  width: 100px;
+  height: 100px;
+}
+ #sleepGif{
+  /* display: none; */
+   width: 100px;
+   height: 100px;
+ }
+
+#hungryGif{
+  /* display: none; */
+  width: 100px;
+  height: 100px;
+}
+
+#petGif{
+  margin-right: 10%;
+  margin-left: 10%;
+}
+body {
+  background-color: #fff2cf;
+}
+#timeLeft {
+  text-align: center;
+}

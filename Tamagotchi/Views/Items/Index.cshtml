@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Styles/stlyes.css" type="text/css" media = "all">
+    <script src="~/Scripts/scripts.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>
+
+    <title>Tamagotchi</title>
+  </head>
+  <body>
+    @using Tamagotchi;
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Tamagotchi</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Index/new">Go to Game</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+@if(@Model.Count > 0)
+{
+  @foreach(Pet pet in Model)
+  {
+    <h1>Model: @pet.getSleep()</h1>
+    <h1>Model: @pet.getFood()</h1>
+    <h1>Model: @pet.getPlay()</h1>
+  }
+
+}
+
+<div class="container">
+
+    <img id = "petGif" alt="Logo" src="@Url.Content("~/TamaImage/fishPet.gif")" />
+
+</div>
+
+  <div class="container text-center">
+       <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <ul style="list-style-type:none;">
+              <li><img id = "hungryGif" alt="Logo" src="@Url.Content("~/TamaImage/hungry.gif")" /></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul style="list-style-type:none;">
+              <li><img id = "sleepGif" alt="Logo" src="@Url.Content("~/TamaImage/sleep.gif")" /></li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <ul style="list-style-type:none;">
+              <li><img  id = "funGif" alt="Logo" src="@Url.Content("~/TamaImage/fun.gif")" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <form action="/Index/new" method="post">
+
+      <div class="container text-center">
+           <br>
+            <div class="row">
+              <div class="col-sm-4">
+                <ul style="list-style-type:none;">
+                  <li><button id = "feed" type="submit" value = 100 class = "btn btn-info" name="food">Feed</button></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul style="list-style-type:none;">
+                  <li><button id = "sleep" type="submit" value = 100 class = "btn btn-info" name="sleep">Sleep</button></li>
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul style="list-style-type:none;">
+                  <li><button id = "play" value = 100 type="submit" class = "btn btn-info" name="play">Play</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </form>
+
+  <script src="~/Scripts/scripts.js"></script>
+  </body>
+</html>
